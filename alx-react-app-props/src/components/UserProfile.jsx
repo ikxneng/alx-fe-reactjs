@@ -2,7 +2,7 @@ import UserContext from './UserContext';
 import React from 'react';
 
     const UserProfile = (props) => {
-        const userContext = UserContext();
+        const useContext = UserContext();
         return(
         <div style={{ border: '1px solid gray', padding: '10px', margin: '10px' }}>
             <h2 style={{ color: 'blue' }}>{props.name}</h2>
