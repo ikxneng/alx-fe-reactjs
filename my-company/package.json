@@ -11,7 +11,7 @@
     "react-router-dom": "^6.26.0",
     "react-scripts": "^3.0.1",
     "web-vitals": "^2.1.4",
-    "vite": "1"
+    "vite": "8.19.4"
   },
   "scripts": {
     "start": "react-scripts start",
