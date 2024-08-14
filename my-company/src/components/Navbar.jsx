@@ -11,7 +11,7 @@ export default function Navbar(){
         left: "0",
         width: "100%",
         padding: "20px 10%",
-        background: 'seagreen', 
+        backgroundColor: 'seagreen', 
         display: 'flex',
         justifyContent: "space-between", 
         alignItems: 'center',
