@@ -5,13 +5,15 @@ const EditRecipeForm = ({ recipeId, onClose }) => {
   const recipe = useRecipeStore(state =>
     state.recipes.find(recipe => recipe.id === recipeId)
   );
-  
+
   const updateRecipe = useRecipeStore(state => state.updateRecipe);
-  
+
+  // Initialize state with the recipe's title and description
   const [title, setTitle] = useState(recipe ? recipe.title : '');
   const [description, setDescription] = useState(recipe ? recipe.description : '');
 
   useEffect(() => {
+    // Update form state if the recipe changes
     if (recipe) {
       setTitle(recipe.title);
       setDescription(recipe.description);
@@ -19,12 +21,12 @@ const EditRecipeForm = ({ recipeId, onClose }) => {
   }, [recipe]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission
     updateRecipe({ ...recipe, title, description });
     onClose(); // Close the form after submission
   };
 
-  if (!recipe) return null; // If no recipe is found, return null
+  if (!recipe) return <p>Loading...</p>; // Handle the case where the recipe is not found
 
   return (
     <div className="edit-recipe-form">
