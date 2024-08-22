@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRecipeStore } from './recipeStore'; // Adjust the path as needed
+import { useRecipeStore } from './recipeStore'; 
 
 const EditRecipeForm = ({ recipeId, onClose }) => {
   const recipe = useRecipeStore(state =>
@@ -13,20 +13,20 @@ const EditRecipeForm = ({ recipeId, onClose }) => {
   const [description, setDescription] = useState(recipe ? recipe.description : '');
 
   useEffect(() => {
-    // Update form state if the recipe changes
+
     if (recipe) {
       setTitle(recipe.title);
       setDescription(recipe.description);
     }
   }, [recipe]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission
     updateRecipe({ ...recipe, title, description });
     onClose(); // Close the form after submission
   };
 
-  if (!recipe) return <p>Loading...</p>; // Handle the case where the recipe is not found
+  if (!recipe) return <p>Loading...</p>; 
 
   return (
     <div className="edit-recipe-form">
