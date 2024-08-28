@@ -11,3 +11,5 @@ import PostsComponent from './components/PostsComponent';
       </QueryClientProvider>
     );
   }
+
+export default App;
