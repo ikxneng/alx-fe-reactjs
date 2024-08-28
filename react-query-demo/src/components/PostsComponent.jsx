@@ -21,7 +21,7 @@ const PostsComponent = () => {
     if (isLoading) return <div>Loading...</div>
 
     // Handle Error 
-    if (isError) return <div>Error loading data</div>;
+    if (isError) return <div>There was an error loading data</div>;
 
 
     return(
