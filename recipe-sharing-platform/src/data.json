@@ -3,19 +3,27 @@
       "id": 1,
       "title": "Spaghetti Carbonara",
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "src/assets/Carbonra.jpg"
+      "image": "src/assets/Carbonra.jpg",
+      "ingredients": ["Spaghetti", "Eggs", "Bacon", "Parmesan cheese", "Black pepper"],
+      "instructions": "Boil spaghetti. Cook bacon. Mix eggs and cheese. Combine everything."
+
     },
     {
       "id": 2,
       "title": "Chicken Tikka Masala",
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "src/assets/chicken-tikka.jpeg"
+      "image": "src/assets/chicken-tikka.jpeg",
+      "ingredients": ["Greek Yogurt", "Garlic", "Ginger", "Lemon Juice", "Spices and Seasoning"],
+      "instructions": "Mix chicken pieces with yogurt and the spices and seasoning. Thread onto skewers, then brush with oil. Cook on a griddle plate, under the grill or on the barbeque for 8-10 minutes until cooked through. "
+
     },
     {
       "id": 3,
       "title": "Creamy Garlic Chicken",
       "summary": "Tender chicken breasts smothered in a creamy garlic parmesan sauce for a dinner ready in less than 30 minutes.",
-      "image": "src/assets/creamy.jpg"
+      "image": "src/assets/creamy.jpg",
+      "ingredients": ["Spaghetti", "Eggs", "Bacon", "Parmesan cheese", "Black pepper"],
+      "instructions": "Boil spaghetti. Cook bacon. Mix eggs and cheese. Combine everything."
     }
   ]
 }
