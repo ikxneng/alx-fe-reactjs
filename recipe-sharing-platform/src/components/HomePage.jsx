@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {Link} from 'react-router-dom';
+import AddRecipeForm from "./AddRecipeForm";
+
+
+
 
 const HomePage = () => {
 
@@ -38,7 +42,13 @@ const HomePage = () => {
 
                 </div>
 
+
             ))}
+            
+            </div>
+            <div className="mt-10">
+                <h2 className="text-xl font-bold mb-4">Add a new recipe</h2>
+                <AddRecipeForm />
             </div>
         </div>
     );
