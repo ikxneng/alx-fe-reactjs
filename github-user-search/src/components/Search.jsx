@@ -23,7 +23,11 @@ const Search = () => {
       setUsers(items);
       setTotalCount(total_count);
     } catch (error) {
-      setError('Looks like we can\'t find any users');
+        if(error.response && error.response.status === 403){
+            setError('Looks like we cant find any users');
+        } else {
+            setError('Looks like we cant find any users. Please check your input.');
+        }
     } finally {
       setIsLoading(false); 
     }
@@ -98,7 +102,7 @@ const Search = () => {
         <div className="mt-6 space-y-4">
           {users.map(user => (
             <div key={user.id} className="bg-gray-100 p-4 rounded-lg">
-              <img src={user.avatar_url} alt={user.login} className="w-20 h-20 rounded-full mx-auto" />
+              <img src={user.avatar_url} alt={user.login} className="w-20 h-20 rounded-full mx-auto" loading='lazy' />
               <h2 className="text-xl font-bold mt-2 text-center">{user.login}</h2>
               <p className="text-center">Location: {user.location || 'N/A'}</p>
               <p className="text-center">Public Repositories: {user.public_repos}</p>
