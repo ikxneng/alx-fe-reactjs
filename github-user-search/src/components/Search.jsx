@@ -7,16 +7,18 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false); 
   const [error, setError] = useState(null); 
 
-  const handleSearch = async () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();  
     setIsLoading(true); 
     setError(null); 
-    setUserData(null);
+    setUserData(null); 
 
     try {
       const data = await fetchUserData(username); 
       setUserData(data); 
     } catch (error) {
-      setError('Looks like we can't find the user'); 
+      setError('Looks like we can\'t find the user'); 
     } finally {
       setIsLoading(false); 
     }
@@ -24,26 +26,25 @@ const Search = () => {
 
   return (
     <div className="space-y-4">
-      <input
-        type="text"
-        placeholder="Enter GitHub username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)} 
-        className="border border-gray-300 px-4 py-2 rounded w-full"
-      />
-      <button
-        onClick={handleSearch} 
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Search
-      </button>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          placeholder="Enter GitHub username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="border border-gray-300 px-4 py-2 rounded w-full"
+        />
+        <button
+          type="submit"  
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Search
+        </button>
+      </form>
 
 
       {isLoading && <p>Loading...</p>} 
-
-
       {error && <p className="text-red-500">{error}</p>} 
-
 
       {userData && (
         <div className="bg-gray-100 p-4 rounded">
