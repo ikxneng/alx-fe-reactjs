@@ -10,7 +10,7 @@ const Search = () => {
   const handleSearch = async () => {
     setIsLoading(true); 
     setError(null); 
-    setUserData(null); 
+    setUserData(null);
 
     try {
       const data = await fetchUserData(username); 
@@ -28,11 +28,11 @@ const Search = () => {
         type="text"
         placeholder="Enter GitHub username"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => setUsername(e.target.value)} 
         className="border border-gray-300 px-4 py-2 rounded w-full"
       />
       <button
-        onClick={handleSearch}
+        onClick={handleSearch} 
         className="bg-blue-500 text-white px-4 py-2 rounded"
       >
         Search
@@ -41,7 +41,9 @@ const Search = () => {
 
       {isLoading && <p>Loading...</p>} 
 
+
       {error && <p className="text-red-500">{error}</p>} 
+
 
       {userData && (
         <div className="bg-gray-100 p-4 rounded">
